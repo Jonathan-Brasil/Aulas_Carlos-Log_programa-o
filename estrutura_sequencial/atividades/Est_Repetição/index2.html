@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição Decrescente</title>
+</head>
+<body>
+    <h1>Estrutura de Repetição Decrescente</h1>
+    <label for="valorInicial">Digite o valor inicial:</label>
+    <input type="number" id="valorInicial">
+    <button onclick="mostrarDecrescente()">Mostrar</button>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        function mostrarDecrescente() {
+            // Obtém o valor inicial do input
+            var valorInicial = parseInt(document.getElementById('valorInicial').value);
+            
+            // Obtém a referência ao elemento onde o resultado será exibido
+            var resultado = document.getElementById('resultado');
+            
+            // Limpa o conteúdo anterior
+            resultado.innerHTML = '';
+            
+            // Verifica se o valor inicial é um número positivo
+            if (isNaN(valorInicial) || valorInicial <= 0) {
+                resultado.innerHTML = 'Por favor, insira um número inteiro maior que 0.';
+            } else {
+                // Estrutura de repetição decrescente
+                for (var i = valorInicial; i >= 1; i--) {
+                    resultado.innerHTML += i + '<br>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
