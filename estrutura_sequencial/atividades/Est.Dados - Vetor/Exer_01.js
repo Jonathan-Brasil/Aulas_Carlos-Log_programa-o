@@ -1,9 +1,22 @@
-let numeros, sequencia = [], acumuladora = 0
+// Dada uma sequência de n números, imprimi-la na ordem inversa à da leitura.
 
-for (let i = 0 ; i > sequencia; i--){
-    numeros = Number(prompt("Digite os números: "))
-    sequencia = sequencia - numeros
+let n, numeros = [];
+
+do {
+
+    n = Number(prompt("Digite a quantidade de números: "));
+    if(n < 0 || isNaN(n)){
+    alert("Número inválido")
 }
-document.write(`<p> Os números na ordem inversa fica assim: ${sequencia}</p>`)
+}while(n < 0 || isNaN(n));
 
+for(let i = 0; i < n; i++){
+    numeros[i] = Number(prompt("Digite o número: "));
+}
 
+document.write(`Vetor: ${numeros}`)
+
+// 0:4, 1:5, 2:6, 3:7 -> length = 4 - 1 = 3
+for(let i = numeros.length - 1; i >= 0; i--){
+    document.write(`<p>${numeros[i]}</p>`)
+}
